@@ -31,7 +31,6 @@ def AlegereCamera():
         if camere_duble == raspuns_negativ:
             if int(Client) / 2 == 1:
                 print('Avem si camere triple.')
-            elif int(Client) / 2 == 1:
                 camere_triple = (input('Cate camere triple doriti? '))
                 if int(camere_triple) <= 10:
                     print('Desigur! Poftiti, va rog!')
