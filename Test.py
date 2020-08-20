@@ -1,5 +1,6 @@
 from tkinter import *
 
+
 tkWindow = Tk()
 tkWindow.geometry('500x200')
 tkWindow.title('Cazare')
@@ -22,28 +23,30 @@ camere_triple = 3
 raspuns_negativ = 'nu'
 raspuns_pozitiv = 'da'
 
-def AlegereCamera:
+def AlegereCamera():
  while camere == True:
     Client = input("Cate persoane sunteti? ")
     if int(Client) >= 1 and int(Client) <= 50:
         camere_duble = (input("Doriti camera dubla? "))
         if camere_duble == raspuns_negativ:
-            if int(Client) >= 3:
+            if int(Client) / 2 == 1:
                 print('Avem si camere triple.')
-            else:
-                print('Ne cerem scuze dar nu avem camere single!')
-            if int(Client) >= 3:
+            elif int(Client) / 2 == 1:
                 camere_triple = (input('Cate camere triple doriti? '))
                 if int(camere_triple) <= 10:
                     print('Desigur! Poftiti, va rog!')
                 else:
                     print('Nu dispunem de acest numar.')
+            else:
+                print('Poftiti!')
         else:
-            print('Poftiti,va rog!')
-
-
-        camere = int(Client)
+            print('Poftiti,va rog, plus o camera tripla! ')
     else:
-        print('Avem doar 20 de camere.')
+        print('Avem o capacitate de doar 50 de persoane.')
+    capacitate = 0 + int(Client)
+    if capacitate == 50:
+        exit(AlegereCamera)
+
+AlegereCamera()
 
 
